@@ -7,7 +7,6 @@ import (
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
 var (
@@ -24,15 +23,9 @@ func ConnectDB() {
 	}
 
 	Ctx, _ = context.WithTimeout(context.Background(), 10*time.Second)
-
 	err = client.Connect(Ctx)
 	if err != nil {
 		log.Println("Failed to connect to database:", err.Error())
-	}
-
-	err = client.Ping(Ctx, readpref.Primary())
-	if err != nil {
-		log.Println("Ping Failed with error:", err.Error())
 	}
 
 	FitnessTracker := client.Database("fitness_tracker")
