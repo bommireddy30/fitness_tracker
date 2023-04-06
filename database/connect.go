@@ -18,7 +18,6 @@ var (
 )
 
 func ConnectDB() {
-	log.Println("We are here!!")
 	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://durgareddyalt:Abcd1234@messages01.bw6knds.mongodb.net/?retryWrites=true&w=majority"))
 	if err != nil {
 		log.Println("Failed to establish the client!! with Error:", err.Error())

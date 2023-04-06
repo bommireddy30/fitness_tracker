@@ -8,5 +8,6 @@ import (
 
 func RouterSetup(app *fiber.App) {
 	api := app.Group("/api")
-	api.Post("/create-user", handler.CreateUser)
+	user := api.Group("/user")
+	user.Post("/create-user", handler.CreateUser)
 }
