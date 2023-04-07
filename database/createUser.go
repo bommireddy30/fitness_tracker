@@ -11,6 +11,5 @@ func CreateUser(userDto requestdto.CreateUserReqDto) error {
 		log.Println("UsersCollection.InsertOne failed with an error:", err.Error())
 		return err
 	}
-
 	return nil
 }
