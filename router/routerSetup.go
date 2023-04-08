@@ -11,4 +11,5 @@ func RouterSetup(app *fiber.App) {
 
 	user := api.Group("/user")
 	user.Post("/create-user", handler.CreateUser)
+	user.Post("/user-login", handler.UserLogin)
 }
